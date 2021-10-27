@@ -37,7 +37,7 @@ export const logout = async () => {
   }
 };
 
-export const signup = async (name, email, password, confirmPassword) => {
+export const signup = async (name, email, password, passwordConfirm) => {
   try {
     const res = await axios({
       method: 'POST',
@@ -46,7 +46,7 @@ export const signup = async (name, email, password, confirmPassword) => {
         name,
         email,
         password,
-        confirmPassword,
+        passwordConfirm,
       },
     });
 

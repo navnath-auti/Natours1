@@ -74,6 +74,6 @@ if (signupForm)
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
-    const confirmPassword = document.getElementById('confirmPassword').value;
-    signup(name, email, password, confirmPassword);
+    const passwordConfirm = document.getElementById('confirmPassword').value;
+    signup(name, email, password, passwordConfirm);
   });

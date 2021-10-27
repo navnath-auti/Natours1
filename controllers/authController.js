@@ -37,6 +37,7 @@ const createSendToken = (user, statusCode, res) => {
 };
 
 exports.signup = catchAsync(async (req, res, next) => {
+  // console.log(req.body);
   if (req.body.password === req.body.passwordConfirm) {
     const newUser = await User.create({
       name: req.body.name,
@@ -44,17 +45,6 @@ exports.signup = catchAsync(async (req, res, next) => {
       password: req.body.password,
       passwordConfirm: req.body.passwordConfirm,
     });
-
-    bcrypt.hash(req.body.password, saltRounds, function (err, hash) {
-      bcrypt.compare(req.body.reEnterPassword, hash).then(function (result) {
-        if (result === true) {
-          const register = new User({
-            name: req.body.name,
-            phoneNo: req.body.phoneNo,
-            address: req.body.address,
-            password: hash,
-          });
-          register.save(function (err) {
 
     const url = `${req.protocol}://${req.get('host')}/me`;
     console.log(url);
